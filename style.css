@@ -1,0 +1,80 @@
+
+body {
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+    background: linear-gradient(to right, #8f94fb, #4e54c8);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #7F7FD5;
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    padding: 55px;
+    border-radius: 10px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.top input {
+    width: 350px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.top button {
+    width: 45px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+}
+
+.top button:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    padding: 20px;
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+    background: linear-gradient(to right, #8f94fb, #4e54c8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btnAction {
+    border-radius: 20px;
+    border: none;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.btnAction:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
