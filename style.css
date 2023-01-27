@@ -78,3 +78,88 @@ body {
     background: #ffffff;
     cursor: pointer;
 }
+
+.editWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #4e54c8;
+    border: 1px solid #1b26f0;
+    width: 415px;
+    border-radius: 10px;
+    z-index: 200;
+    /*display: none;*/
+
+}
+
+.editWindow.open {
+    display: block !important;
+}
+
+#backgroundEditWindow{
+    position: fixed;
+    top: 0;
+    background-color: #4e54c8;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    z-index: 100;
+    right: 0;
+    display: none;
+}
+
+#backgroundEditWindow.open{
+  display: block !important;
+}
+
+#btnCloseEditWindow{
+    position: absolute;
+    top: -25px;
+    right: -18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+
+}
+
+form {
+   width: 100%;
+   margin-top: 20px; 
+}
+
+.frm-line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.frm-line label {
+    margin-bottom: 7px;
+}
+
+.frm-line input {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.frm-line button {
+    padding: 7px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.frm-line button:hover {
+    background: #ffffff;
+}

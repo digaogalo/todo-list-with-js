@@ -62,5 +62,11 @@ function edit(idTask) {
 }
 
 function del(idTask) {
-    alert(idTask)
+    let confirm = window.confirm('Tem certeza que deseja excluir?')
+    if (confirm) {
+        let li = document.getElementById(''+ idTask + '')
+        if (li) {
+            taskList.removeChild(li)
+        }
+    }
 }
