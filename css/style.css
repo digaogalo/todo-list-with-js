@@ -79,7 +79,7 @@ body {
     cursor: pointer;
 }
 
-.editWindow {
+#editWindow {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -90,11 +90,11 @@ body {
     width: 415px;
     border-radius: 10px;
     z-index: 200;
-    /*display: none;*/
+    display: none;
 
 }
 
-.editWindow.open {
+#editWindow.open {
     display: block !important;
 }
 
@@ -123,7 +123,11 @@ body {
     border-radius: 50%;
     outline: none;
     cursor: pointer;
+    border: none;
+}
 
+#btnCloseEditWindow:hover {
+    background: #ffffff;
 }
 
 form {

@@ -1,6 +1,13 @@
 let inputNewTask = document.querySelector('#inputNewTask')
 let btnAddTask = document.querySelector('#btnAddTask')
 let taskList = document.querySelector('#taskList')
+let editWindow = document.querySelector('#editWindow')
+let backgroundEditWindow = document.querySelector('#backgroundEditWindow')
+let btnCloseEditWindow = document.querySelector('#btnCloseEditWindow')
+let btnTaskUpdate = document.querySelector('#btnTaskUpdate')
+let idTaskEdit = document.querySelector('#idTaskEdit')
+
+
 
 inputNewTask.addEventListener('keypress', (e) => {
     if(e.keyCode == 13) {
@@ -12,12 +19,20 @@ inputNewTask.addEventListener('keypress', (e) => {
     }
 })
 
+btnCloseEditWindow.addEventListener('click', (e) => {
+    changeEditWindow()
+})
+
 btnAddTask.addEventListener('click', (e) => {
     let task = {
         name: inputNewTask.value,
         id: idGenerator(),
     }
      addtask(task)
+})
+
+btnTaskUpdate.addEventListener('click', (e) => {
+
 })
 
 function idGenerator() {
@@ -58,7 +73,11 @@ function createLi(task) {
 }
 
 function edit(idTask) {
-    alert(idTask)
+   let li = document.getElementById(''+ idTask +'')
+   if (li) {
+    idTaskEdit.innerHTML = '#' + idTask
+    changeEditWindow()
+   }
 }
 
 function del(idTask) {
@@ -67,6 +86,13 @@ function del(idTask) {
         let li = document.getElementById(''+ idTask + '')
         if (li) {
             taskList.removeChild(li)
+        } else {
+            alert('Elemento HTML não encontrado')
         }
     }
+}
+
+function changeEditWindow() {
+    editWindow.classList.toggle('open')
+    backgroundEditWindow.classList.toggle('open')
 }

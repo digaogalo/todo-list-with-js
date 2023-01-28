@@ -20,41 +20,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+
     <div class="container">
       <div class="top">
-        <input type="text" id="inputNewTask" placeholder="Add a New Task" />
+        <input type="text" 
+        id="inputNewTask" 
+        placeholder="Add a New Task" 
+        >
         <button id="btnAddTask">
           <i class="fa fa-plus"></i>
         </button>
       </div>
+
       <ul id="taskList">
-        <li>
-          <span class="taskText">Tarefa 1</span>
-          <div>
-            <button class="btnAction">
-              <i class="fa fa-pencil"></i>
-            </button>
-            <button class="btnAction">
-              <i class="fa fa-trash"></i>
-            </button>
-          </div>
-        </li>
       </ul>
     </div>
+    <div>
 
-    <div class="editWindow">
+
+    <div id="editWindow" class="open">
       <button id="btnCloseEditWindow">
         <i class="fa fa-remove"></i>
       </button>
-      <h2>#1021</h2>
-      <hr>
+      <h2 id="idTaskEdit">#1021</h2>
+      <hr />
       <form>
         <div class="frm-line">
           <label for="name">Name</label>
-          <input type="text" id="inputTaskNameEdit">
+          <input type="text" id="inputTaskNameEdit" />
         </div>
         <div class="frm-line">
           <button id="btnTaskUpdate">Save</button>
@@ -63,8 +59,6 @@
     </div>
     <div id="backgroundEditWindow" class="open"></div>
 
-   
-
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
