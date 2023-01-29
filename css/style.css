@@ -79,6 +79,13 @@ body {
     cursor: pointer;
 }
 
+.taskText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 290px;
+    white-space: nowrap;
+}
+
 #editWindow {
     position: fixed;
     top: 50%;
