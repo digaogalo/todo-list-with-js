@@ -6,6 +6,8 @@ let backgroundEditWindow = document.querySelector('#backgroundEditWindow')
 let btnCloseEditWindow = document.querySelector('#btnCloseEditWindow')
 let btnTaskUpdate = document.querySelector('#btnTaskUpdate')
 let idTaskEdit = document.querySelector('#idTaskEdit')
+let inputTaskNameEdit = document.querySelector('#inputTaskNameEdit')
+
 
 
 
@@ -32,7 +34,22 @@ btnAddTask.addEventListener('click', (e) => {
 })
 
 btnTaskUpdate.addEventListener('click', (e) => {
+   e.preventDefault()
 
+   let idTask =  idTaskEdit.innerHTML.replace('#', '')
+
+   let task = {
+    name : inputTaskNameEdit.value,
+    id : idGenerator()
+   }
+
+   let currentTask = document.getElementById(''+idTask+'')
+
+   if (currentTask) {
+    let li = createLi(task)
+   taskList.replaceChild(li, currentTask)
+   changeEditWindow()
+   }  
 })
 
 function idGenerator() {
@@ -72,23 +89,22 @@ function createLi(task) {
     return li
 }
 
-function edit(idTask) {
-   let li = document.getElementById(''+ idTask +'')
+function editTask(idTask) {
+   let li = document.getElementById('' + idTask + '');
    if (li) {
     idTaskEdit.innerHTML = '#' + idTask
+    inputTaskNameEdit.value = li.innerText
     changeEditWindow()
-   }
+   } 
 }
 
-function del(idTask) {
-    let confirm = window.confirm('Tem certeza que deseja excluir?')
-    if (confirm) {
+function deleteTask(idTask) {
+    let confirmacao = window.confirm('Are you sure you want to delete?')
+    if (confirmacao) {
         let li = document.getElementById(''+ idTask + '')
         if (li) {
             taskList.removeChild(li)
-        } else {
-            alert('Elemento HTML não encontrado')
-        }
+        } 
     }
 }
 

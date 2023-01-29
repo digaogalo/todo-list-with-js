@@ -94,7 +94,7 @@ body {
 
 }
 
-#editWindow.open {
+#editWindow.open{
     display: block !important;
 }
 
@@ -114,7 +114,7 @@ body {
   display: block !important;
 }
 
-#btnCloseEditWindow{
+#btnCloseEditWindow.open{
     position: absolute;
     top: -25px;
     right: -18px;
