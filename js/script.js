@@ -10,10 +10,11 @@ let inputTaskNameEdit = document.querySelector('#inputTaskNameEdit')
 const qtyIdAvailable = Number.MAX_VALUE
 
 inputNewTask.addEventListener('keypress', (e) => {
+
     if(e.keyCode == 13) {
         let task = {
             name: inputNewTask.value,
-            id: idGenerator(),
+            id: idGeneratorV2(),
         }
       addTask(task)
     }
@@ -24,9 +25,10 @@ btnCloseEditWindow.addEventListener('click', (e) => {
 })
 
 btnAddTask.addEventListener('click', (e) => {
+
     let task = {
         name: inputNewTask.value,
-        id: idGenerator(),
+        id: idGeneratorV2(),
     }
      addTask(task)
 })
@@ -56,30 +58,30 @@ function idGenerator() {
     return Math.floor(Math.random() * qtyIdAvailable)
 }
 
+function idGeneratorV2() {
+    return uniqueId()
+}
+
 function addTask(task) {
     let li = createLi(task)
     taskList.appendChild(li)
     inputNewTask.value = ''
 }
 
-function idGenerator() {
-    return uniqueIdGenerator()
-}
-
-function uniqueIdGenerator () {
+function uniqueId () {
     let itemList = document.querySelector('#taskList').children
-    let idGenerator = []
+    let idGenerate = []
 
     for(let i = 0; i < itemList.length; i++) {
-        idGenerator.push(itemList[i].id) 
+        idGenerate.push(itemList[i].id) 
         }
 
         let idCounter = 0
         let id = idGenerator()
 
         while(idCounter <= qtyIdAvailable &&
-            idGenerator.indexOf(id.toString()) > - 1){
-                id = idGenerator
+            idGenerate.indexOf(id.toString()) > - 1){
+                id = idGenerate
                 idCounter++
 
                 if(idCounter >= qtyIdAvailable) {
@@ -89,6 +91,7 @@ function uniqueIdGenerator () {
             }
             return id
     }
+    
 
     function addTask(task) {
         let li = createLi(task)

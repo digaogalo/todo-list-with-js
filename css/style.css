@@ -121,7 +121,7 @@ body {
   display: block !important;
 }
 
-#btnCloseEditWindow.open{
+#btnCloseEditWindow{
     position: absolute;
     top: -25px;
     right: -18px;
